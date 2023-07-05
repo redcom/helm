@@ -1,0 +1,50 @@
+apiVersion: v1
+entries:
+  aws-load-balancer-controller:
+  - apiVersion: v2
+    appVersion: v2.5.3
+    created: "2023-07-04T22:50:02.6484568-04:00"
+    description: AWS Load Balancer Controller Helm chart for Kubernetes
+    digest: d90a245316acbb9f46500ed89aa7e16da474065617db9ead1a5a10954bf491aa
+    home: https://github.com/aws/eks-charts
+    icon: https://raw.githubusercontent.com/aws/eks-charts/master/docs/logo/aws.png
+    keywords:
+    - eks
+    - alb
+    - load balancer
+    - ingress
+    - nlb
+    maintainers:
+    - email: kishorj@users.noreply.github.com
+      name: kishorj
+      url: https://github.com/kishorj
+    - email: m00nf1sh@users.noreply.github.com
+      name: m00nf1sh
+      url: https://github.com/m00nf1sh
+    name: aws-load-balancer-controller
+    sources:
+    - https://github.com/aws/eks-charts
+    urls:
+    - aws-load-balancer-controller-1.5.4.tgz
+    version: 1.5.4
+  kubernetes-external-secrets:
+  - apiVersion: v2
+    appVersion: 8.5.5
+    created: "2023-07-04T22:50:02.6495955-04:00"
+    deprecated: true
+    description: 'Deprecated: Kubernetes External Secrets CustomResourceDefinition'
+    digest: 125c0f8d5b10ceadacf19752b4481b8c965b473f7ea8ee6d188c46029dda65e0
+    home: https://github.com/external-secrets/kubernetes-external-secrets
+    keywords:
+    - kubernetes-external-secrets
+    - secrets
+    maintainers:
+    - name: external-secrets
+      url: https://github.com/external-secrets
+    name: kubernetes-external-secrets
+    sources:
+    - https://github.com/external-secrets/kubernetes-external-secrets
+    urls:
+    - kubernetes-external-secrets-8.5.5.tgz
+    version: 8.5.5
+generated: "2023-07-04T22:50:02.6465371-04:00"
