@@ -44,7 +44,7 @@ EOF
 create_branch() {
   git checkout --orphan $pages_branch_name
   git rm -rf ./docs
-  mkdir docs
+  mkdir -p ./docs
   echo -e “User-Agent: *\nDisallow: /” > ./docs/robots.txt
   git add ./docs/robots.txt
   create_readme
