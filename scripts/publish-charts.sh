@@ -2,7 +2,7 @@
 #
 # Package Helm chart
 
-set -e
+set +x
 . ./scripts/.env
 
 pages_branch_name=$PAGES_BRANCH_NAME
@@ -20,7 +20,7 @@ current_branch=$(git rev-parse --abbrev-ref HEAD)
 git stash
 
 git checkout $pages_branch_name
-git pull origin $pages_branch_name
+git pull --all
 git add ./docs
 git commit -m "Update Helm charts"
 git push origin $pages_branch_name
