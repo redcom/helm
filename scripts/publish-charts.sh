@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Package Helm chart
 
 set -e
-source ./scripts/.env
+. ./scripts/.env
 
 pages_branch_name=$PAGES_BRANCH_NAME
 repo_owner=$REPO_OWNER
