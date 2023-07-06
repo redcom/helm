@@ -19,8 +19,10 @@ current_branch=$(git rev-parse --abbrev-ref HEAD)
 # hide local changes in current branch
 git stash
 
-git checkout $pages_branch_name
 git pull --all
+echo "checkout the pages branch"
+
+git checkout $pages_branch_name
 git add ./docs
 git commit -m "Update Helm charts"
 git push origin $pages_branch_name
