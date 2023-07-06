@@ -38,6 +38,11 @@ jobs:
         run: |
           git config --global user.name 'redcom'
           git config --global user.email 'redcom@gmail.com'
+      - name: package charts
+        id: packager
+        run: |
+          cp ./scripts/.env.sample ./scripts/.env
+          ./scripts/helm-package.sh
       - name: publish charts
         id: publisher
         run: |
