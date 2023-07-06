@@ -23,6 +23,7 @@ git pull --all
 echo "checkout the pages branch"
 
 git checkout $pages_branch_name
+echo -e "\n$GITHUB_SHA\n" >> ./docs/README.md"
 git add ./docs
 git commit -m "Update Helm charts"
 git push origin $pages_branch_name
