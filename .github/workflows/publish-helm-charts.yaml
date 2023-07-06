@@ -54,6 +54,7 @@ jobs:
         with:
           folder: docs # The folder the action should deploy.
           branch: helm
+          target-folder: docs
           token: ${{ secrets.PAT }}
 
 
