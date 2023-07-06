@@ -1,0 +1,86 @@
+apiVersion: v1
+entries:
+  argo-cd:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: Upgrade Argo CD to v2.7.7
+      artifacthub.io/signKey: |
+        fingerprint: 2B8F22F57260EFA67BE1C5824B11F800CD9D2252
+        url: https://argoproj.github.io/argo-helm/pgp_keys.asc
+    apiVersion: v2
+    appVersion: v2.7.7
+    created: "2023-07-06T20:33:23.517220911Z"
+    dependencies:
+    - condition: redis-ha.enabled
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts/
+      version: 4.23.0
+    description: A Helm chart for Argo CD, a declarative, GitOps continuous delivery
+      tool for Kubernetes.
+    digest: 97331d2b16898b31948758db3397deaeefaa4f00e561c99c4d2d41455a07c6fc
+    home: https://github.com/argoproj/argo-helm
+    icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+    keywords:
+    - argoproj
+    - argocd
+    - gitops
+    kubeVersion: '>=1.23.0-0'
+    maintainers:
+    - name: argoproj
+      url: https://argoproj.github.io/
+    name: argo-cd
+    sources:
+    - https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+    - https://github.com/argoproj/argo-cd
+    urls:
+    - https://redcom.github.io/helm/argo-cd-5.37.1.tgz
+    version: 5.37.1
+  aws-load-balancer-controller:
+  - apiVersion: v2
+    appVersion: v2.5.3
+    created: "2023-07-06T20:33:23.519181705Z"
+    description: AWS Load Balancer Controller Helm chart for Kubernetes
+    digest: 7f08c97ec6cd932d0477c80d1a1ec43cbc3eea03e1cae528269274a7b25cc544
+    home: https://github.com/aws/eks-charts
+    icon: https://raw.githubusercontent.com/aws/eks-charts/master/docs/logo/aws.png
+    keywords:
+    - eks
+    - alb
+    - load balancer
+    - ingress
+    - nlb
+    maintainers:
+    - email: kishorj@users.noreply.github.com
+      name: kishorj
+      url: https://github.com/kishorj
+    - email: m00nf1sh@users.noreply.github.com
+      name: m00nf1sh
+      url: https://github.com/m00nf1sh
+    name: aws-load-balancer-controller
+    sources:
+    - https://github.com/aws/eks-charts
+    urls:
+    - https://redcom.github.io/helm/aws-load-balancer-controller-1.5.4.tgz
+    version: 1.5.4
+  kubernetes-external-secrets:
+  - apiVersion: v2
+    appVersion: 8.5.5
+    created: "2023-07-06T20:33:23.5208426Z"
+    deprecated: true
+    description: 'Deprecated: Kubernetes External Secrets CustomResourceDefinition'
+    digest: 951ab756a5e5afde63676b0a16d380b49466227703ae1c8c350cdff372233e7e
+    home: https://github.com/external-secrets/kubernetes-external-secrets
+    keywords:
+    - kubernetes-external-secrets
+    - secrets
+    maintainers:
+    - name: external-secrets
+      url: https://github.com/external-secrets
+    name: kubernetes-external-secrets
+    sources:
+    - https://github.com/external-secrets/kubernetes-external-secrets
+    urls:
+    - https://redcom.github.io/helm/kubernetes-external-secrets-8.5.5.tgz
+    version: 8.5.5
+generated: "2023-07-06T20:33:23.502255556Z"
