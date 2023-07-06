@@ -2,12 +2,10 @@
 
 # Set the required variables
 
-source .env
-repo_owner="redcom"
-repo_name="helm"
-pages_branch_name="helm"
-
-echo $PAT_HELM_GITHUB_TOKEN
+source ./scripts/.env
+repo_owner=$REPO_OWNER
+repo_name=$REPO_NAME
+pages_branch_name=$PAGES_BRANCH_NAME
 access_token=$PAT_HELM_GITHUB_TOKEN
 
 
@@ -15,7 +13,9 @@ access_token=$PAT_HELM_GITHUB_TOKEN
 create_branch() {
   git checkout --orphan $pages_branch_name
   git rm -rf .
-  git commit --allow-empty -m "Initial commit"
+  echo -e “User-Agent: *\nDisallow: /” > robots.txt
+  git add robots.txt
+  git commit -m "Initial commit with robots.txt"
   git push origin $pages_branch_name
 }
 
