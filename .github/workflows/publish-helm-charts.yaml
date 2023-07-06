@@ -1,0 +1,51 @@
+
+# DO NOT CHANGE THIS FILE DIRECTLY! SEE [https://github.com/finanzcheck/fap-common/blob/main/update-kustomize-manifests.yaml](fap-common/update-kustomize-manifests.yaml)
+
+name: Package and deploy helm charts
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  package_helm_charts:
+    name: Package helm charts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{github.head_ref}}
+      - name: package charts
+        id: packager
+        run: |
+          cp ./scripts/.env.sample ./scripts/.env
+          ./scripts/helm-package.sh
+
+      - run: echo ${{ steps.packager.outputs.stdout }}
+      - run: echo ${{ steps.packager.outputs.stderr }}
+      - run: echo ${{ steps.packager.outputs.exitcode }}
+
+  publish_helm_charts:
+    name: Publish Helm charts
+    needs: [package_helm_charts]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{github.head_ref}}
+      - name: setup git user
+        run: |
+          git config --global user.name 'redcom'
+          git config --global user.email 'redcom@gmail.com'
+      - name: publish charts
+        id: publisher
+        run: |
+          cp ./scripts/.env.sample ./scripts/.env
+          ./scripts/publish-charts.sh
+
+      - run: echo ${{ steps.publisher.outputs.stdout }}
+      - run: echo ${{ steps.publisher.outputs.stderr }}
+      - run: echo ${{ steps.publisher.outputs.exitcode }}
+
+

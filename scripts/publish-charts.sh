@@ -30,5 +30,3 @@ git checkout "$current_branch"
 
 # unstash local changes
 git stash pop
-
-

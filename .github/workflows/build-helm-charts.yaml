@@ -1,0 +1,28 @@
+
+# DO NOT CHANGE THIS FILE DIRECTLY! SEE [https://github.com/finanzcheck/fap-common/blob/main/update-kustomize-manifests.yaml](fap-common/update-kustomize-manifests.yaml)
+
+name: Lint and package helm charts
+
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  package_helm_charts:
+    name: Package helm charts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{github.head_ref}}
+      - name: package charts
+        id: packager
+        run: |
+          cp ./scripts/.env.sample ./scripts/.env
+          ./scripts/helm-package.sh
+
+      - run: echo ${{ steps.packager.outputs.stdout }}
+      - run: echo ${{ steps.packager.outputs.stderr }}
+      - run: echo ${{ steps.packager.outputs.exitcode }}
+
+
