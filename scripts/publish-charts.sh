@@ -32,3 +32,4 @@ git checkout "$current_branch"
 
 # unstash local changes
 git stash pop
+echo "GH Pages updated with new release"
