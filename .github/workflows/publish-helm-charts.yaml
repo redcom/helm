@@ -49,8 +49,8 @@ jobs:
         run: |
           cp ./scripts/.env.sample ./scripts/.env
           ./scripts/publish-charts.sh
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
           folder: docs # The folder the action should deploy.
           token: ${{ secrets.PAT }}
