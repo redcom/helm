@@ -14,6 +14,7 @@ charts_source_folder="./helm-charts"
 for i in $(ls $charts_source_folder)
 do
   helm lint ./helm-charts/$i
+  helm dependency update ./helm-charts/$i
   helm package ./helm-charts/$i -d ./docs
 done
 

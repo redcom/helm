@@ -1,2 +1,4 @@
 .env*
 !.env.sample
+docs/*.tgz
+docs/index.yaml
